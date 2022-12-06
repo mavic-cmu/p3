@@ -19,7 +19,7 @@ func runServerStartupTest(t *testing.T, timeoutMs int, trace func(), desc string
 	defer staff.SetArtiLatencyMs(0)
 
 	doneCh := make(chan bool, 0)
-	timeoutCh := time.After(time.Duration(10) * time.Second)
+	timeoutCh := time.After(time.Duration(timeoutMs) * time.Millisecond)
 
 	go func() {
 		trace()
